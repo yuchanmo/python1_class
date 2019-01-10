@@ -44,8 +44,7 @@ def f5(list):
 
 #6 조교님이 풀어주신 솔루션
 def f6(lst):
-    if lst:
-            
+    if lst:            
         if type(lst[0])==list:
             return f6(lst[0])+f6(lst[1:])
         else:
@@ -88,9 +87,11 @@ def f10(list):
 
 #11
 def f11(list):
+    if len(list)==0:
+        return 
     if len(list) == 1:
-        print(list[0])
-        return
+        return list[0]
+        
     return f11(list[1:])
 
 #12
@@ -146,17 +147,17 @@ def f17(list):
         return list[0]
     return f17(list[1:])
 
-def f18(a,b):
-    d = 2
-    s = 1
-    if a//d == 0 or b//d == 0:
-        return s
 
-    if a%d != 0 and b%d == 0:
-        return s * d * f18(a//d,b//d)
-    else:
-        d+=1
-        return s * d
+def f18(a,b):   
+    if b>a:
+        a,b = b,a
+    if a-b == 0:
+        return b
+    return f18(a-b,b)
+
+  
+
+    
 
 
 #f18 loop form
