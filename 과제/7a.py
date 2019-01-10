@@ -103,8 +103,120 @@ def f12(n):
 #13
 def f13(n):
     if n == 0:
-        return 0     
-    return 1 + f13(n//10)
+        return 1
+    else:
+        v = n//10
+        if v == 0:
+            return 1
+        else:
+            return 1 + f13(n//10)
+
+
+#14
+def f14(list):
+    if len(list) == 0:
+        return 
+    if list[0]%2 == 1:
+        return list[0]
+    return f14(list[1:])
+
+
+#15
+def f15(list):
+    if len(list)==0:
+        return 0
+    if list[0]%2 == 1:
+        return list[0]+f15(list[1:])
+    else:
+        return f15(list[1:])
+
+
+def f16(list):
+    res = []
+    if len(list)==0:
+        return res
+    if list[0] % 2 ==1:
+        return list[:1]+f16(list[1:])
+    else:
+        return f16(list[1:])
+
+
+def f17(list):
+    if len(list)==2:
+        return list[0]
+    return f17(list[1:])
+
+def f18(a,b):
+    d = 2
+    s = 1
+    if a//d == 0 or b//d == 0:
+        return s
+
+    if a%d != 0 and b%d == 0:
+        return s * d * f18(a//d,b//d)
+    else:
+        d+=1
+        return s * d
+
+
+#f18 loop form
+def test(a,b):
+    d = 2
+    s = 1
+    while True:
+        if a//d == 0 or b//d == 0:
+            print(s)
+            break
+        if a%d ==0 and b%d==0:
+            s = s*d
+            a = a//d
+            b = b//d
+        else:
+            d += 1
+
+
+
+
+def f19(list1,list2):
+    if len(list1) == 0:
+        return list2
+    elif len(list2) ==0:
+        return list1
+    else:
+        if list1[0] < list2[0]:
+            return list1[:1] + f19(list1[1:],list2)
+        else:
+            return list2[:1] + f19(list1,list2[1:])
+        
+
+
+def f20(lst):    
+    half = len(lst)//2
+    if len(lst) <= 1:
+        return lst
+    nlist1 = f20(lst[:half])
+    nlist2 = f20(lst[half:])
+    return f19(nlist1,nlist2)
+
+
+
+
+
+
+
+        
+
+    
+
+
+    
+    
+
+
+    
+
+
+    
 
 
 

@@ -137,24 +137,23 @@ def f13(matrix):
     return is_identity
 
 
-# #14
-# def f14(rows,cols):
-#     outerarray = []
-#     for r in range(rows):
-#         innerarray = []
-#         for c in range(cols):
-#             if r == 0 or r == (rows-1):
-#                 if c == 0 or c == (cols-1):
-#                     innerarray.append(2)
-#                 else:
-#                     innerarray.append(3)
-#             else:
-#                 if c == 0 or c == (cols-1):
-#                     innerarray.append(3)
-#                 else:                    
-#                     innerarray.append(4)
-#         outerarray.append(innerarray)
-#     return outerarray
+#14
+def f14(rows,cols):
+    outerarray = []
+    for r in range(rows):
+        innerarray = []
+        for c in range(cols):
+            cnt = 0
+            for i in [-1,1]:
+                if r + i >= 0 and r + i < rows:
+                    cnt += 1
+                if c + i >= 0 and c + i < cols:
+                    cnt += 1
+            innerarray.append(cnt)
+        outerarray.append(innerarray)
+    return outerarray
+
+
 
 
 f12([[4,3,2,1]],[[1],[2],[3],[4]])
