@@ -92,4 +92,19 @@ def f11(list):
         print(list[0])
         return
     return f11(list[1:])
-    
+
+#12
+def f12(n):
+    if n == 0 :
+        return
+    print(n)
+    return f12(n-1)
+
+#13
+def f13(n):
+    if n == 0:
+        return 0     
+    return 1 + f13(n//10)
+
+
+
