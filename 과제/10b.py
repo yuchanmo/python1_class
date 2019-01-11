@@ -18,6 +18,8 @@ def f3(n):
 # f3(1)
 # f3(5)
 
+def f4(n):
+    map(lambda x:print(range(x)+1, range(1,n+1)
 
 def f5(matrix):
     list(map(lambda x:print(sum(x)),matrix))
@@ -32,5 +34,13 @@ def f6(matrix):
 # f6([[1,0],[0,1]])
 # f6([[1,2,3],[4,5,6]])
 # f6([[1],[2],[3],[4]])
+
+
+def f8(matrix):
+    list(map(lambda x : print(*list(filter(lambda y: y%2 ,matrix[x]))),range(len(matrix))))
+
+# f8([[1,0],[0,1]])
+# f8([[1,2,3],[4,5,6]])
+# f8([[1],[2],[3],[4]])
 
 
