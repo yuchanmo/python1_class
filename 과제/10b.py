@@ -18,8 +18,8 @@ def f3(n):
 # f3(1)
 # f3(5)
 
-def f4(n):
-    map(lambda x:print(range(x)+1, range(1,n+1)
+# def f4(n):
+#     map(lambda x:print(range(x)+1, range(1,n+1)
 
 def f5(matrix):
     list(map(lambda x:print(sum(x)),matrix))
