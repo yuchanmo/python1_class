@@ -57,7 +57,7 @@ def f8(a,b,n):
     # for v in filter(lambda x : x % n ==0, range(a,b+1)):
     #     print(v)
 
-f8(1,10,2)
+# f8(1,10,2)
 
 def f9(width,height):
     list(map(print,['*'*width]*height))
@@ -95,4 +95,20 @@ def f12(lst):
 def f13(lst,target):
     return max(list(map(lambda x : x[0],filter(lambda x : x[1] == True, enumerate(map(lambda x:x == target,lst))))))
 
-f13([1,2,3,1,2,3],3)
+# f13([1,2,3,1,2,3],3)
+# f13([1,2,3],3)
+# f13([1,1,1,1],1)
+
+def f14(lst):
+        return max(map(lambda l,i: -1 if l>=0 else i,lst,range(len(lst))))
+
+# f14([1,2,-3])
+# f14([1,-2,-3,1,-2,-3])
+# f14([-1,1,1,1])
+
+def f15(lst):
+        return sum(map(lambda l,i:0 if i % 2 else l,lst,range(len(lst))))
+
+# f15([1,2,-3])
+# f15([1,-2,-3,1,-2,-3])
+# f15([-1,1,1,1])
