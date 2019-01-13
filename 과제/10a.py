@@ -112,3 +112,52 @@ def f15(lst):
 # f15([1,2,-3])
 # f15([1,-2,-3,1,-2,-3])
 # f15([-1,1,1,1])
+
+def f16(n):
+        list(map(print,map(lambda x : '*'*x , range(n,0,-1))))
+
+# # f16(3)
+# # f16(2)
+# # f16(1)
+
+def f17(lst):
+        list(map(lambda i : print(lst[i]),range(len(lst)-1,-1,-2)))
+
+# f17([1,2,3,4,5,6])
+# f17([1,2,3,4])
+# f17([1])
+
+def f18(n):
+        print(reduce(lambda x,y:x*y,[1]+list(range(1,n+1))))
+
+# f18(0)
+# f18(2)
+# f18(3)
+
+def f19(matrix):
+        list(map(lambda x : print(sum(x)),matrix))
+
+# f19([[1,0],[0,1]])
+# f19([[1,2,3],[4,5,6]])
+# f19([[1],[2],[3],[4]])
+
+def f20(matrix):
+        list(map(lambda i : print(matrix[i][i]),range(len(matrix))))
+
+# f20([[1,0],[0,1]])
+# f20([[1,2,3],[4,5,6],[7,8,9]])
+# f20([[1]])
+
+def f21(lst):
+        list(map(lambda x : print(reduce(lambda x,y : x*y ,range(1,x+1))),lst))
+
+# f21([])
+# f21([1,2,3])
+# f21([1,2,3,4])
+
+def f22(lst):
+        list(map(lambda x : print(*range(x,-1,-1)),lst))
+
+# f22([])
+# f22([1,3,5])
+# f22([5,3,6,2])
