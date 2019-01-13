@@ -161,3 +161,9 @@ def f22(lst):
 # f22([])
 # f22([1,3,5])
 # f22([5,3,6,2])
+
+
+def f23(lst1,ls2):
+        return list(map(lambda x,y:x+y,lst1,lst2))
+
+f23([],[])
