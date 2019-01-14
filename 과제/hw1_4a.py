@@ -1,7 +1,7 @@
 #1. Write a function f1(list) that will return the number of odd elements 1. Write a function f1(list) that will return the number of odd elements 1. Write a function f1(list) that will return the number of odd elements 1. Write a function f1(list) that will return the number of odd elements
 def f1(list):
     cnt = 0
-    for i in range(0,len(list)):
+    for i in range(len(list)):
         if list[i] % 2 == 1 :
             cnt +=1 
     return cnt
@@ -10,9 +10,8 @@ def f1(list):
 
 
 #Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list. 2. Write a function f2(list) that will print each odd element in given list.
-def f2(list):
-    cnt = 0
-    for i in range(0,len(list)):
+def f2(list):    
+    for i in range(len(list)):
         if list[i] % 2 == 1 :
             print(list[i])
 # f2([1,2,3,4])
@@ -171,9 +170,9 @@ def f16(n):
             print('*',end='')
         print()
 
-# # f16(3)
-# # f16(2)
-# # f16(1)
+# f16(3)
+# f16(2)
+# f16(1)
 
 
 
@@ -210,9 +209,9 @@ def f19(list):
         factorial_result = factorial(list[i])
         print(factorial_result)
 
-# f19([[1,0],[0,1]])
-# f19([[1,2,3],[4,5,6]])
-# f19([[1],[2],[3],[4]])
+# f19([])
+# f19([1,2,3])
+# f19([1,2,3,4]) 
 
 
 #20 . Write a function . Write a function . Write a function . Write a function . Write a function . Write a function . Write a function . Write a function f2 0(list) that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each that will print a countdown starting from each element to zero for a given list. element to zero for a given list. element to zero for a given list. element to zero for a given list. element to zero for a given list. element to zero for a given list. element to zero for a given list. element
@@ -224,9 +223,9 @@ def f20(list):
         printcountdown(list[j])
         print()
 
-# f20([[1,0],[0,1]])
-# f20([[1,2,3],[4,5,6],[7,8,9]])
-# f20([[1]])
+# f20([])
+# f20([1,2,3])
+# f20([1,2,3,4]) 
 
 
 #21 . Write a function . Write a function . Write a function . Write a function f2 1(list1, list2) (list1, list2) (list1, list2) (list1, list2) that will return a new list where each index in that will return a new list where each index in that will return a new list where each index in that will return a new list where each index in that will return a new list where each index in that will return a new list where each index in that will return a new list where each index in the new list corresponds to the new list corresponds to
@@ -239,9 +238,9 @@ def f21(list1,list2):
     return reslist
 
 
-# f21([])
-# f21([1,2,3])
-# f21([1,2,3,4])
+# f21([1,2,3], [1,2,3]) 
+# f21([0,0,0], [1,2,3]) 
+# f21([], []) 
 
 #22 22. Write a function . Write a function . Write a function . Write a function . Write a function f2 2(n)
 def f22(n):
@@ -250,9 +249,9 @@ def f22(n):
             print(i)
         
 
-# f22([])
-# f22([1,3,5])
-# f22([5,3,6,2])
+# f22(10)
+# f22(1)
+# f22(3)
 
 
 #23
@@ -264,7 +263,10 @@ def f23(list):
                 largestval = list[i][j]
     return largestval
 
-#f23([],[])
+# f23([[1,2,3],[4,5,6],[7,8,9]]) 
+# f23([[3,2,1],[0,-1,-2]]) 
+# f23([[1,2,3,4],[],[34],[],[],[56],[67]]) 
+# #f23([],[])
 
 #24 정렬 필요
 def f24(list):
@@ -279,21 +281,22 @@ def f24(list):
         list[i],list[tmp_idx] =list[tmp_idx],list[i]
     #second largest val from array ordered by desenceding
     return list[1]
-
+ 
+# f24([1,4,3,2,5]) 
+# f24([3,2]) 
+# f24([3,4]) 
 
         
 #25
-def f25(n):
-    power_rate = 0
-    left_most_val = n // 1
-    while True:
-        solution = n // (10 ** power_rate)
-        if solution == 0:
-            break
-        left_most_val = solution
-        power_rate += 1
-    return left_most_val
+def f25(n) : 
+    while n >= 10:  
+        n = n // 10; 
+    return n 
 
+
+# f25(1234) 
+# f25(4321)
+# f25(3) 
 
 #26
 def f26(list):
@@ -306,7 +309,8 @@ def f26(list):
     for j in range(len(list)):
         printlargestval(list[j])
 
-
-
+# f26([[1,2,3],[4,5,6],[7,8,9]])
+# f26([[3,2,1],[0,-1,-2]]) 
+# f26([[1,2,3,4],[1],[34],[2],[3],[56],[67]]) 
 
 

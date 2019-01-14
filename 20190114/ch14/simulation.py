@@ -117,3 +117,32 @@ def student(pairs,samples):
     return num_correct / samples
 
 
+def quandary(p):
+    assert p <=1 and p >=0
+    import random
+    location = 0
+    umbrella = [1,1]    
+    wet = False
+    walk_cnt = 0
+    while wet==False:
+        if random.random()< p:
+            if umbrella[location] == 0:
+                wet = True
+            else:
+                walk_cnt += 1
+                umbrella[location] -=1
+                location = 1- location
+                umbrella[location] +=1
+        else:
+            walk_cnt = walk_cnt + 1
+            location = 1 - location
+    return walk_cnt
+
+for i in range(0,100):     
+    p = i*0.01   
+    trips = [quandary(p) for i in range(1)]
+    avg = sum(trips)/len(trips)
+    print("probablity",i," avg : ", avg)
+
+
+
