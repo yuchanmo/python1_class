@@ -163,7 +163,47 @@ def f22(lst):
 # f22([5,3,6,2])
 
 
-def f23(lst1,ls2):
+def f23(lst1,lst2):
         return list(map(lambda x,y:x+y,lst1,lst2))
 
-f23([],[])
+# f23([],[])
+# f23([1,2,3],[1,2,3])
+# f23([0,0,0],[1,2,3])
+
+def f24(n):
+        list(map(print, filter(lambda x:x%2==0 or x%3==0,range(1,n+1))))
+
+# f24(10)
+# f24(1)
+# f24(3)
+
+def f25(lst):
+        return max(map(lambda x:max(x) if x else 0,lst))
+
+# f25([[1,2,3],[4,5,6],[7,8,9]])
+# f25([[3,2,1],[0,-1,-2]])
+# f25([[1,2,3,4],[],[34],[],[],[56],[67]])
+
+def f26(lst):
+        return list(sorted(lst,reverse = True))[1]
+
+# f26([1,4,3,2,5])
+# f26([3,2])
+# f26([3,4])
+
+#다시 풀어봐야할듯
+def f27(n):
+        return eval(str(n)[0])
+
+# f27(1234)
+# f27(5326)
+# f27(3)
+
+        
+
+def f28(lst):
+        list(map(lambda x : print(max(x)),lst))
+
+# f28([[1,2,3],[4,5,6],[7,8,9]])
+# f28([[3,2,1],[0,-1,-2]])
+# f28([[1,2,3,4],[1],[34],[2],[3],[56],[67]])

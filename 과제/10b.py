@@ -64,3 +64,20 @@ def f9(matrix1,matrix2):
 # f9([[1,0],[0,1]],[[1,0],[0,1]])
 # f9([[1,2,3],[4,5,6]],[[-1,-1,-1],[-1,-1,-1]])
 # f9([[1],[2],[3],[4]],[[4],[3],[2],[1]])
+
+
+# def f10(matrix1,matrix2):
+
+
+def f11(matrix):
+    return all(map(lambda m,i : all(map(lambda mi,ii : True if (i == ii and mi == 1) or (i!=ii and mi == 0) else False ,m,range(len(matrix)))),matrix,range(len(matrix))))
+
+# f11([[1]])
+# f11([[1,0,0],[0,1,0],[0,0,1]])
+# f11([[1,0,0],[0,1,5],[0,0,1]])
+
+def f12(rows,cols):
+     #return list(map(lambda r: list(map(lambda c: sum(list(map(lambda i : True if (r+i>-1 and r+i<rows) and (c+i>-1 and c+i <cols) else False ,range(-1,2,2)))),range(cols))),range(rows)))
+     return list(map(lambda r: [r,list(map(lambda c : c,range(cols)))],range(rows)))
+
+f12(3,3)
