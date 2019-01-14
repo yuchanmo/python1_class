@@ -145,6 +145,8 @@ def f12(matrix1,matrix2):
             for colidx in range(len(m1)): 
                 tmpsum+=m1[colidx]*matrix2[colidx][rowidx]
             innerarray.append(tmpsum)
+        if(len(matrix1)==1):
+            return innerarray        
         outerarray.append(innerarray)            
     return outerarray
 

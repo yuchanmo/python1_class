@@ -88,15 +88,6 @@ def f8(s):
             return False
         return f8(s[1:-1])
 
-# f8("kayak")
-# f8('penguin')
-# f8('a')
-# f8('')
-
-            
-
-
-
 #9
 def f9(n):
     if n == 0:
@@ -128,16 +119,6 @@ def f12(n):
     print(n)
     return f12(n-1)
 
-#13
-# def f13(n):
-#     if n == 0:
-#         return 1
-#     else:
-#         v = n//10
-#         if v == 0:
-#             return 1
-#         else:
-#             return 1 + f13(n//10)
 
 def f13(n):
   if n<=9:
@@ -186,14 +167,6 @@ def f17(list):
         return list[0]
     return f17(list[1:])
 
-#f17([1,2,3,4]) 
-
-# def f18(a,b):   
-#     if b>a:
-#         a,b = b,a
-#     if a-b == 0:
-#         return b
-#     return f18(a-b,b)
 
 def f18(a,b):
   x= a % b 
@@ -201,22 +174,6 @@ def f18(a,b):
     return b
   else:
     return f18(b,x)
-
-# #f18 loop form
-# def test(a,b):
-#     d = 2
-#     s = 1
-#     while True:
-#         if a//d == 0 or b//d == 0:
-#             print(s)
-#             break
-#         if a%d ==0 and b%d==0:
-#             s = s*d
-#             a = a//d
-#             b = b//d
-#         else:
-#             d += 1
-
 
 
 
