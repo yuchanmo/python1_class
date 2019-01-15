@@ -78,6 +78,9 @@ def f11(matrix):
 
 def f12(rows,cols):
      #return list(map(lambda r: list(map(lambda c: sum(list(map(lambda i : True if (r+i>-1 and r+i<rows) and (c+i>-1 and c+i <cols) else False ,range(-1,2,2)))),range(cols))),range(rows)))
-     return list(map(lambda r: [r,list(map(lambda c : c,range(cols)))],range(rows)))
+     #return list(map(lambda r : list(map(lambda c : [r,c],range(cols))),range(rows)))
+     #return list(map(lambda i : list(map(lambda r: list(map(lambda c: (r,c,i) ,range(cols))) ,range(rows))),range(-1,2,2)))
+     return list(map(lambda pair : list(map(lambda x : sum(x) ,pair)), list(map(lambda r : list(map(lambda c: list(map(lambda i: int(r+i>-1 and r+i<rows) + int(c+i>-1 and c+i <cols) ,range(-1,2,2))) ,range(cols))),range(rows)))))
 
 f12(3,3)
+
