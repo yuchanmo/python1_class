@@ -59,6 +59,7 @@ def sort_repeated(l):
 # sort_repeated([1,2,3,2,2,4])
 # sort_repeated(list(range(100)))
     
+# 다시 풀어아햠
 def makeDictnumber(lst):
     dic = {}
     for v in lst:
