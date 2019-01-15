@@ -81,6 +81,26 @@ def mostFrequent(lst):
 #         if maxval 
 
 
-mostFrequent([2,5,3,4,6,4,2,4,5])
+#mostFrequent([2,5,3,4,6,4,2,4,5])
+
+
+
+def histogram(letters):
+    vs = list(letters.values())
+    ks = set(vs)
+    d = dict()
+    for k in ks:
+        d[k]=vs.count(k)
+    return d
+
+# letters = {1: "a", 2: "b", 3:"a"}
+# histogram(letters) 
+# letters = {1: "a", 2: "b", 3:"c"}
+# histogram(letters)
+# letters[4] = "a"
+# letters[5] = "b"
+# letters[6] = "a"
+# histogram(letters)
+
 
 

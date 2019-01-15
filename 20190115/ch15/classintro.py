@@ -84,3 +84,25 @@ a.f()
 b.f()
 a.g()
 b.g()
+
+
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def withdraw(self,amount):
+        self.balance -= amount
+        return self.balance
+    
+    def deposit(self,amount):
+        self.balance += amount
+        return self.balance
+
+class MinimumBalanceAccount(BankAccount):
+    def __init__(self,minimum,balance):
+        super().__init__()
+        self.minimum_balance = minimum
+
+    def withdraw(self, amount):
+        return super().withdraw(amount)
+

@@ -15,7 +15,7 @@ def f2(lst):
 
 def f3(lst):
     return sum(filter(lambda x:x%2==1,lst))
-    # return reduce(lambda x,y:x+y,filter(lambda x:x%2==1,lst))
+    #return reduce(lambda x,y:x+y,filter(lambda x:x%2==1,lst))
 
 
 # f3([1,2,3,4,5])
@@ -27,7 +27,7 @@ def f4(lst):
         if v%2==1:
             sum+=i
     return sum
-    # return sum([i for i,v in enumerate(lst) if v%2 ==1])
+    return sum([i for i,v in enumerate(lst) if v%2 ==1])
 
 # f4([1,2,3,4])
 # f4([1,2,3,4,5])
@@ -54,10 +54,12 @@ def f7(lst):
 
 def f8(a,b,n):
     list(map(print,filter(lambda x : x % n ==0, range(a,b+1))))
-    # for v in filter(lambda x : x % n ==0, range(a,b+1)):
-    #     print(v)
+#     for v in filter(lambda x : x % n ==0, range(a,b+1)):
+#         print(v)
 
 # f8(1,10,2)
+# f8(1,10,11)
+# f8(1,10,7)
 
 def f9(width,height):
     list(map(print,['*'*width]*height))
@@ -95,8 +97,8 @@ def f12(lst):
 def f13(lst,target):
     return max(list(map(lambda x : x[0],filter(lambda x : x[1] == True, enumerate(map(lambda x:x == target,lst))))))
 
-# f13([1,2,3,1,2,3],3)
 # f13([1,2,3],3)
+# f13([1,2,3,1,2,3],3)
 # f13([1,1,1,1],1)
 
 def f14(lst):
@@ -116,9 +118,9 @@ def f15(lst):
 def f16(n):
         list(map(print,map(lambda x : '*'*x , range(n,0,-1))))
 
-# # f16(3)
-# # f16(2)
-# # f16(1)
+# f16(3)
+# f16(2)
+# f16(1)
 
 def f17(lst):
         list(map(lambda i : print(lst[i]),range(len(lst)-1,-1,-2)))
@@ -191,12 +193,12 @@ def f26(lst):
 # f26([3,2])
 # f26([3,4])
 
-#다시 풀어봐야할듯
+
 def f27(n):
         return eval(str(n)[0])
 
 # f27(1234)
-# f27(5326)
+# f27(4321)
 # f27(3)
 
         

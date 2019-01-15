@@ -12,3 +12,4 @@ class BaseClass(object):
 class Inher(BaseClass):
     pass
 
+
