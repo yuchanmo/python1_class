@@ -37,3 +37,50 @@ class Service:
 
 pey = Service()
 pey.sum(1,1)
+
+
+# class Foo(object):
+#     def __init__(self):
+#         self.health = 100
+
+
+# class SubFoo(Foo):
+#     pass
+
+
+# testobj = SubFoo()
+# testobj.health
+
+
+class Foo(object):
+    def __init__(self):
+        self.health = 100
+    
+class SubFoo(Foo):
+    def __init__(self):      
+        super().__init__()  
+        self.muscle = 200
+
+
+testobj = SubFoo()
+testobj.health
+testobj.muscle
+
+
+class A:
+    def f(self):
+        return self.g()
+
+    def g(self):
+        return 'A'
+
+class B(A):
+    def g(self):
+        return 'B'
+
+a = A()
+b = B()
+a.f()
+b.f()
+a.g()
+b.g()
