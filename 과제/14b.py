@@ -20,11 +20,67 @@ def double_each(some_list):
 
 def sums_to(nums,k):
     if len(nums) == 0:
-        return 0
-    summation = nums[0] + sums_to(nums[1:],k)
-    return k == summation
+        return 0==k
+    return sums_to(nums[1:],k-nums[0])
+    
 
-nums = [1, 2, 3] 
-sums_to(nums,6)
-sums_to(nums, 5) 
-sums_to([], 1) 
+# nums = [1, 2, 3] 
+# sums_to(nums,6)
+# sums_to(nums, 5) 
+# sums_to([], 1) 
+
+
+def is_reverse(string1,string2):
+    if string1 == '' and string2 == '':
+        return True
+    elif (string1== '' and string2!='') or (string1!='' and string2==''):
+        return False
+    else:
+        if string1[0] == string2[-1]:
+            return True and is_reverse(string1[1:],string2[:-1])
+        else:
+            return False
+
+# is_reverse("abc","cba")
+# is_reverse("abc","abc")
+# is_reverse("abc","dcba")
+
+def sort_repeated(l):
+    dic={}
+    for v in l:
+        if v in dic:
+            dic[v]+=1
+        else:
+            dic[v]=1     
+    #return dic
+    return sorted(list(map(lambda x : x[0],filter(lambda x:x[1]>1,dic.items()))))
+
+# sort_repeated([1,2,3,2,1])
+# sort_repeated([1,2,3,2,2,4])
+# sort_repeated(list(range(100)))
+    
+def makeDictnumber(lst):
+    dic = {}
+    for v in lst:
+        if v in dic:
+            dic[v]+=1
+        else:
+            dic[v]=1
+    return dic
+
+def mostFrequent(lst):
+    dic = makeDictnumber(lst)
+    return sorted(dic.items(),key = lambda d : d[1],reverse=True)[0][0]
+
+
+# def mostFrequentwithget(lst):
+#     dic = makeDictnumber(lst)
+    
+#     for k in dic.keys():
+#         val = dic.get(k)
+#         if maxval 
+
+
+mostFrequent([2,5,3,4,6,4,2,4,5])
+
+

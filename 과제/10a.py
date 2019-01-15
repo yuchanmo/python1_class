@@ -163,7 +163,35 @@ def f22(lst):
 # f22([5,3,6,2])
 
 
-def f23(lst1,ls2):
-        return list(map(lambda x,y:x+y,lst1,lst2))
+def f23(lst1,lst2):
+        return list(map(lambda x : x[0]+x[1],zip(lst1,lst2)))
 
-f23([],[])
+# f23([],[])
+# f23([1,2,3],[1,2,3])
+# f23([0,0,0],[1,2,3])
+
+
+def f24(n):
+        list(map(print,filter(lambda x : x%2==0 or x%3==0, range(1,n+1))))
+
+
+# f24(1)
+# f24(3)
+# f24(10)
+
+def f25(lst):
+        return max(map(lambda x : max(x),filter(lambda a:a,lst)))
+
+# f25([[1,2,3],[4,5,6],[7,8,9]])
+# f25([[3,2,1],[0,-1,-2]])
+# f25([[1,2,3,4],[],[34],[],[],[56],[67]])
+
+def f26(lst):
+        return sorted(lst,reverse=True)[1]
+
+# f26([1,4,3,2,5])
+# f26([3,2])
+# f26([3,4])
+
+def f27(n):
+        
