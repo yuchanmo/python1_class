@@ -148,3 +148,67 @@ ei = di.copy()
 ei[(5,6)] = 7
 di
 ei
+
+#ch9 copy/deep copy
+import copy
+a = [1,5,9,[33,23,23,[235,565]]]
+b= copy.copy(a)
+c= copy.deepcopy(a)
+d = list(a)
+e = a + []
+f = a[:]
+
+a[2] = 40
+a[3][1]=60
+a[3][3][1] = 999
+print(a,b,c,d,e,f)
+
+ddd = {(1,2):3,{1:4}:3}
+
+a = list(range(1,5))
+b= list(range(5,22))
+c = zip(a,b)
+d = [(aa,bb) for aa,bb in c]
+d
+
+
+#12 soring and searchnig
+def binarySearch(lst,v):
+    return bsHelper(lst,v,-1,len(lst))
+
+def bsHelper(lst,v,lower,upper):
+    if lst == []:
+        return None
+    half = (lower + upper) // 2
+    
+    half_val = lst[half]
+    if v == half_val:
+        return half
+    elif half_val > v:
+        return bsHelper(lst,v,lower,half)
+    else:
+        return bsHelper(lst,v,half,upper)
+    
+
+binarySearch([1,2,3,4,5,6,7,8,9],4)
+
+
+def quickSort(lst):
+    if len(lst)<=1:
+        return lst
+    
+    pivot_idx = len(lst)//2
+    smaller_items = []
+    larger_items =[]
+    for i,v in enumerate(lst):
+        if i!=pivot_idx:
+            if v < lst[pivot_idx]:
+                smaller_items.append(v)
+            else:
+                larger_items.append(v)
+    quickSort(smaller_items)
+    quickSort(larger_items)
+    lst[:] = smaller_items + [lst[pivot_idx]] + larger_items
+
+
+
