@@ -49,19 +49,21 @@ bubblesort(testset)
 
 
 def mergelist(lst1,lst2):
-    if len(lst1)<=1 or len(lst2)<=1:
-        return lst1 + lst2
+    if len(lst1)==0:
+        return lst2
+    if len(lst2)==0:
+        return lst1
     else:
         if lst1[0] < lst2[0]:
-            return mergelist(lst1[1:],lst1[:1] + lst2)
+            return lst1[:1] + mergelist(lst1[1:],lst2)
         else:
-            return mergelist(lst2[1:],lst2[:1] + lst1)
+            return lst2[:1] + mergelist(lst1,lst2[1:])
 
 def mergesort(lst):
     #두개로 쪼갠다
     #쪼갠데이터를 비교해서 합친다
     hi = len(lst)//2
-    if hi == 0 :
+    if len(lst)<=1 :
         return lst
     
     l1 = mergesort(lst[:hi])
@@ -74,3 +76,25 @@ mergelist([1,3,5],[2,4,6])
 
 gt()
 mergesort(testset)
+
+
+def bssearch(lst,key):
+    return bs_helper(lst,key, -1,len(lst))
+
+def bs_helper(lst,key,lower,upper):
+    if lower + 1== upper:
+        return None
+
+    mid = (lower + upper) //2
+    if key == lst[mid]:
+        return mid
+    if key < lst[mid]:
+        return bs_helper(lst,key,lower,mid)
+    else:
+        return bs_helper(lst,key,mid,upper)
+
+
+l = list(range(3,10))
+bssearch(l,3)
+
+    
