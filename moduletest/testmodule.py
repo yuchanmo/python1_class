@@ -3,3 +3,5 @@ class Service:
         self.a = 3
         self.b = 3
     
+    def printService(self):
+        print(self.a)
