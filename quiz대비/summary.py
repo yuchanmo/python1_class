@@ -117,3 +117,34 @@ calculatePi(100)
 
 
 
+#ch8 tuple/set/dictionary
+s1 = set([1,2,3])
+s2 = set([2,3,4])
+
+s1&s2
+s1|s2
+s1-s2
+
+s1.add(5)
+s1
+s1.remove(5)
+s1
+
+s3 = {'a','b','c'}
+s4 = s3.copy()
+s3
+s3.add('d')
+s3
+s4
+
+s1^s2
+
+{'c'}.issuperset(s3)
+
+
+di = {(1,2):3,(4,5):6}
+len(di)
+ei = di.copy()
+ei[(5,6)] = 7
+di
+ei
