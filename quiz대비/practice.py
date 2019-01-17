@@ -135,3 +135,21 @@ def fibo2(n):
     return x
 
 fibo2(7)
+
+
+def qs(lst):
+  if len(lst)>1:
+    pi=len(lst)//2
+    SL=[]
+    LL=[]
+    for i,v in enumerate(lst):
+      if i != pi:
+        if v<lst[0]:
+          SL.append(v)
+        else:
+          LL.append(v)
+    qs(SL)
+    qs(LL)
+    return SL+[lst[0]]+LL
+    
+qs([4,5,3,6,9,8,7])

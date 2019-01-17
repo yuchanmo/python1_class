@@ -193,22 +193,41 @@ def bsHelper(lst,v,lower,upper):
 binarySearch([1,2,3,4,5,6,7,8,9],4)
 
 
-def quickSort(lst):
+def quickSort(lst,depth = 0):
     if len(lst)<=1:
         return lst
     
     pivot_idx = len(lst)//2
     smaller_items = []
     larger_items =[]
+    print('\t'*depth,"pivotidx:",pivot_idx,'pivotval :',lst[pivot_idx])
     for i,v in enumerate(lst):
+        print('\t'*depth,i,"번째")
         if i!=pivot_idx:
             if v < lst[pivot_idx]:
+                print('\t'*depth,"왼쪽값",v)
                 smaller_items.append(v)
             else:
+                print('\t'*depth,"오른쪽값:",v)
                 larger_items.append(v)
-    quickSort(smaller_items)
-    quickSort(larger_items)
-    lst[:] = smaller_items + [lst[pivot_idx]] + larger_items
+    depth+=1
+    a = quickSort(smaller_items,depth)
+    b = quickSort(larger_items,depth)
+    ss = a + [lst[pivot_idx]] + b
+    #lst[:] = smaller_items + [lst[pivot_idx]] + larger_items
+    
+    #print('\t'*depth,"lst[:]",lst)
+    #print('\t'*depth,"ss",lst)
+    return ss
+    
+
+quickSort([4,5,3,6,9,8,7])   
 
 
 
+l = [1,2,3]
+s = [4,5,6]
+ss= l+s
+ss
+t[:] = l+s
+t
