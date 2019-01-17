@@ -54,4 +54,3 @@ b = 3
 c = 3
 sys.getrefcount(3)
 
-while sys
