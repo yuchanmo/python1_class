@@ -72,36 +72,26 @@ def f9(matrix1,matrix2):
 
 
 def f10(matrix1,matrix2):
-     return list(map(lambda m1 : 
-                         list(map(lambda m2 :
-                                   sum(map(lambda m1e,m2e: 
-                                             m1e*m2e, m1,m2)), list(map(lambda i : 
-                                                                           list(map(lambda y : y[i] ,matrix2 )) ,range(len(matrix2[0])))
-                                                  )))
-                                                  ,matrix1))
+  if len(matrix2[0])==1:
+    return [sum(map(lambda k : matrix1[0][k]*matrix2[k][0] , range(len(matrix1[0]))))]
+  else:
+    return list(map( lambda i : list(map(lambda j : sum(map(lambda k : matrix1[i][k]*matrix2[k][j] , range(len(matrix1[0])))), range(len(matrix2[0])))), range(len(matrix1))))
 
 
-# def f10(mat1,mat2):
-#      map(lambda i : map(lambda j : map(lambda k : k,range(len(mat1[0]))),range(len(mat2[0]))),range(mat1))
 
 # f10([[1,0],[0,1]],[[1,0],[0,1]])
 # f10([[1,2,3],[4,5,6]],[[-1,-1],[-1,-1],[-1,-1]])
 # f10([[4,3,2,1]],[[1],[2],[3],[4]])
 
 def f11(matrix):
-    return all(map(lambda m,i : all(map(lambda mi,ii : True if (i == ii and mi == 1) or (i!=ii and mi == 0) else False ,m,range(len(matrix)))),matrix,range(len(matrix))))
+  return all(map(lambda i : matrix[i][i]==1 and sum(matrix[i])==1 , range(len(matrix))))
 
 # f11([[1]])
 # f11([[1,0,0],[0,1,0],[0,0,1]])
 # f11([[1,0,0],[0,1,5],[0,0,1]])
 
-def f12(rows,cols):
-     #return list(map(lambda r: list(map(lambda c: sum(list(map(lambda i : True if (r+i>-1 and r+i<rows) and (c+i>-1 and c+i <cols) else False ,range(-1,2,2)))),range(cols))),range(rows)))
-     #return list(map(lambda r : list(map(lambda c : [r,c],range(cols))),range(rows)))
-     #return list(map(lambda i : list(map(lambda r: list(map(lambda c: (r,c,i) ,range(cols))) ,range(rows))),range(-1,2,2)))
-     #로직 : rows x cols x idx(-1,1) 의 배열 생성 |row+/-idx| <boundry 의 True 갯수(int로 형변환), |col+/-idx| < boundry 의 형변환
-
-
+def f12(rows,cols):     
+     # 로직 : rows x cols x idx(-1,1) 의 배열 생성 |row+/-idx| <boundry 의 True 갯수(int로 형변환), |col+/-idx| < boundry 의 형변환
      return list(map(lambda pair : list(map(lambda x : sum(x) ,pair)), list(map(lambda r : list(map(lambda c: list(map(lambda i: int(r+i>-1 and r+i<rows) + int(c+i>-1 and c+i <cols) ,range(-1,2,2))) ,range(cols))),range(rows)))))
 
 # f12(3,3)

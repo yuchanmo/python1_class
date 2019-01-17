@@ -30,36 +30,31 @@ def sums_to(nums,k):
 # sums_to([], 1) 
 
 
-def is_reverse(string1,string2):
-    if string1 == '' and string2 == '':
-        return True
-    elif (string1== '' and string2!='') or (string1!='' and string2==''):
-        return False
-    else:
-        if string1[0] == string2[-1]:
-            return True and is_reverse(string1[1:],string2[:-1])
-        else:
-            return False
+def is_reverse(x,y):
+  if x == '' and y == '':
+    return True
+  elif x == '' or y == '':
+    return False
+  elif x[0].lower() != y[-1].lower():
+    return False
+  else:
+    return is_reverse(x[1:], y[:-1])
 
+  
 # is_reverse("abc","cba")
 # is_reverse("abc","abc")
 # is_reverse("abc","dcba")
 
-def sort_repeated(l):
-    dic={}
-    for v in l:
-        if v in dic:
-            dic[v]+=1
-        else:
-            dic[v]=1     
-    #return dic
-    return sorted(list(map(lambda x : x[0],filter(lambda x:x[1]>1,dic.items()))))
+def sort_repated(L):
+  for i in set(L):
+    L.remove(i)
+  return list(set(L))
 
 # sort_repeated([1,2,3,2,1])
 # sort_repeated([1,2,3,2,2,4])
 # sort_repeated(list(range(100)))
     
-# 다시 풀어아햠
+
 def makeDictnumber(lst):
     dic = {}
     for v in lst:
@@ -69,20 +64,18 @@ def makeDictnumber(lst):
             dic[v]=1
     return dic
 
+#without get 
 def mostFrequent(lst):
     dic = makeDictnumber(lst)
     return sorted(dic.items(),key = lambda d : d[1],reverse=True)[0][0]
 
+#get version
+def mostFrequent2(lst):
+  dic= makeDictnumber(lst)
+  return max(dic, key=dic.get)
 
-# def mostFrequentwithget(lst):
-#     dic = makeDictnumber(lst)
-    
-#     for k in dic.keys():
-#         val = dic.get(k)
-#         if maxval 
-
-
-#mostFrequent([2,5,3,4,6,4,2,4,5])
+# mostFrequent([2,5,3,4,6,4,2,4,5])
+# mostFrequent2([2,5,3,4,6,4,2,4,5])
 
 
 

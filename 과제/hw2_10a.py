@@ -15,18 +15,13 @@ def f2(lst):
 
 def f3(lst):
     return sum(filter(lambda x:x%2==1,lst))
-    #return reduce(lambda x,y:x+y,filter(lambda x:x%2==1,lst))
+#     return reduce(lambda x,y:x+y,filter(lambda x:x%2==1,lst))
 
 
 # f3([1,2,3,4,5])
 # f3([1,2,3,4])
 
-def f4(lst):
-    sum = 0
-    for i,v in enumerate(lst):
-        if v%2==1:
-            sum+=i
-    return sum
+def f4(lst):     
     return sum([i for i,v in enumerate(lst) if v%2 ==1])
 
 # f4([1,2,3,4])
@@ -95,21 +90,23 @@ def f12(lst):
 # f12([-1,-2,-3])
 
 def f13(lst,target):
-    return max(list(map(lambda x : x[0],filter(lambda x : x[1] == True, enumerate(map(lambda x:x == target,lst))))))
+    return max(filter(lambda x : lst[x]==target, range(len(lst))))
+    
 
 # f13([1,2,3],3)
 # f13([1,2,3,1,2,3],3)
 # f13([1,1,1,1],1)
 
 def f14(lst):
-        return max(map(lambda l,i: -1 if l>=0 else i,lst,range(len(lst))))
+        return max(filter(lambda x : lst[x] < 0,range(len(lst))))
 
 # f14([1,2,-3])
 # f14([1,-2,-3,1,-2,-3])
 # f14([-1,1,1,1])
 
 def f15(lst):
-        return sum(map(lambda l,i:0 if i % 2 else l,lst,range(len(lst))))
+        return sum(map(lambda x : x[1] if x[0] %2==0 else 0 ,enumerate(lst)))
+        
 
 # f15([1,2,-3])
 # f15([1,-2,-3,1,-2,-3])
@@ -130,7 +127,7 @@ def f17(lst):
 # f17([1])
 
 def f18(n):
-        print(reduce(lambda x,y:x*y,[1]+list(range(1,n+1))))
+        return list(reduce(lambda x,y:x*y,[1]+list(range(1,n+1))))
 
 # f18(0)
 # f18(2)
@@ -165,6 +162,7 @@ def f22(lst):
 # f22([5,3,6,2])
 
 
+
 def f23(lst1,lst2):
         return list(map(lambda x : x[0]+x[1],zip(lst1,lst2)))
 
@@ -195,7 +193,7 @@ def f26(lst):
 
 
 def f27(n):
-        return eval(str(n)[0])
+        return int(str(n)[0])
 
 # f27(1234)
 # f27(4321)
