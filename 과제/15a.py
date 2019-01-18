@@ -94,6 +94,19 @@ class Square(Shape):
         
         super().__init__(x,x)
         super().describe('This is square')
+
+    
+class DoubleSquare(Shape):
+
+    def __init__(self, x, y):
+        super().__init__(y, y*2)
+
+
+class InsideDoubleSquare(Square):
+
+    def __init__(self, x, y):
+        super().__init__(x, x)
+        self.innersquare = Square(x/2,x/2) 
         
 
 
@@ -103,9 +116,5 @@ s = Square(3,4)
 s.perimeter()
 s.area()
 
-class DoubleSquare(Square):
-
-    def __init__(self,x):
-        super().__init__(x,x)
     
     
