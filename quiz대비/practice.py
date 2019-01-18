@@ -124,8 +124,8 @@ def fibo(n,depth=0):
     d = depth +1
     return fibo(n-1,d) + fibo(n-2,d)
 
-fibo(5)
-0,1,1,2,3,5,8,13,21,34,55
+# fibo(5)
+# 0,1,1,2,3,5,8,13,21,34,55
 
 def fibo2(n):
     x = 0
