@@ -127,11 +127,11 @@ def f17(lst):
 # f17([1])
 
 def f18(n):
-        return list(reduce(lambda x,y:x*y,[1]+list(range(1,n+1))))
+        return (reduce(lambda x,y:x*y,[1]+list(range(1,n+1))))
 
-# f18(0)
-# f18(2)
-# f18(3)
+f18(0)
+f18(2)
+f18(3)
 
 def f19(matrix):
         list(map(lambda x : print(sum(x)),matrix))
