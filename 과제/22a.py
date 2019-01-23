@@ -39,5 +39,13 @@ def hanoi(n):
             move(n-1,z,y,x)
     move(n,t1,t2,t3)
 
-hanoi(3)
+
+def Save():
+    hanoi(10)
+
+
+    for i in range(1,10):
+        print(i)
+
+Save()
     
