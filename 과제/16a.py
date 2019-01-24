@@ -306,6 +306,9 @@ class Staff(SPerson):
 
     def __str__(self):
         return 'My Name is %s. I earn $%s in a year'%(self.name,self.annualpay)
+    
+    def getSchool(self):
+        return self.school
 
 
 tom = Staff('Tom','Gangnam','Yonsei',350000)
