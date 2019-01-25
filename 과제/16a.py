@@ -253,7 +253,7 @@ for i in range(5):
 print(total_salary_if_salary_is_raised)
 
 
-class SPerson:
+class Person:
     def __init__(self,name,address):
         self.name = name
         self.address = address
@@ -266,7 +266,7 @@ class SPerson:
 
     
 
-class Student(SPerson):
+class Student(Person):
     def __init__(self, name,address,year,fee):
         super().__init__(name, address)
         self.gpa = 0.0
@@ -288,7 +288,7 @@ class Student(SPerson):
     
 
 
-class Staff(SPerson):
+class Staff(Person):
     def __init__(self, name, address,school,pay):        
         super().__init__(name, address)
         self.school = school

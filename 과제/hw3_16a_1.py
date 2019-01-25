@@ -16,9 +16,7 @@ class Pythagoras:
     def setPointTwo(self,p2):
         self.point2 = p2
 
-    def getSlope(self):       
-        
-        assert self.point1 != None and self.point2 != None
+    def getSlope(self):                      
         try:
             return (self.point2.y - self.point1.y) / (self.point2.x - self.point1.x)
         except ZeroDivisionError as ze:
@@ -41,3 +39,5 @@ class Pythagoras:
 
 # ps.getDistance()
 # ps.getSlope()
+
+
