@@ -1,5 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "C:\\ANACONDA\\envs\\ds2\\python.exe",
+    "python.pythonPath": "C:\\Python\\Python36\\python.exe",
     "python.linting.enabled": true
 }

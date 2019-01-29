@@ -23,6 +23,9 @@ def match(exp):
 
 match("(a*(b+c)+d)))")
 
+def hanoi(n,x,y,z):
+    hanoi(n-1,x,z,y)
+    hanoi(n-1,z,y,x)
 
 def hanoi(n):
     t1 = Stack()
